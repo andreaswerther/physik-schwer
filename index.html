@@ -1,92 +1,121 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physik-Quiz: schwer</title>
-    <style>
-        body { font-family: sans-serif; margin: 20px; background: #f4f4f4; }
-        .frage { background: white; padding: 10px; margin-bottom: 20px; border-radius: 6px; }
-        .antworten { margin-top: 5px; }
-        button { padding: 10px 15px; font-size: 16px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Physik-Quiz – Schwer</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    .frage { background: white; padding: 15px; margin-bottom: 20px; border-radius: 6px; }
+    .antworten { margin-top: 10px; }
+    .feedback { font-weight: bold; margin-top: 8px; }
+    .richtig { color: green; }
+    .falsch { color: red; }
+    button { padding: 10px 15px; margin-top: 10px; font-size: 16px; }
+  </style>
 </head>
 <body>
 <h1>Physik-Quiz – Schwer</h1>
-<form id="quizForm">
-<div class="frage">
+<div id="quizContainer">
+
+  <div class="frage" id="frage1">
     <p><strong>1. Was beschreibt der Wirkungsgrad?</strong></p>
     <div class="antworten">
-        <label><input type="radio" name="q1" value="A"> A) Die Stromstärke</label><br><label><input type="radio" name="q1" value="B"> B) Die Spannungsänderung</label><br><label><input type="radio" name="q1" value="C"> C) Verhältnis von Nutzleistung zur aufgenommenen Leistung</label><br><label><input type="radio" name="q1" value="D"> D) Energie pro Zeit</label><br>
-    </div>
-</div>
-<div class="frage">
-    <p><strong>2. Welche Größe hat die Einheit Ohm?</strong></p>
-    <div class="antworten">
-        <label><input type="radio" name="q2" value="A"> A) Spannung</label><br><label><input type="radio" name="q2" value="B"> B) Leistung</label><br><label><input type="radio" name="q2" value="C"> C) Widerstand</label><br><label><input type="radio" name="q2" value="D"> D) Stromstärke</label><br>
-    </div>
-</div>
-<div class="frage">
-    <p><strong>3. Ein Gerät hat einen Wirkungsgrad von 40 % und nimmt 50 W auf. Wie viel Leistung wird genutzt?</strong></p>
-    <div class="antworten">
-        <label><input type="radio" name="q3" value="A"> A) 10 W</label><br><label><input type="radio" name="q3" value="B"> B) 20 W</label><br><label><input type="radio" name="q3" value="C"> C) 40 W</label><br><label><input type="radio" name="q3" value="D"> D) 25 W</label><br>
-    </div>
-</div>
-<div class="frage">
-    <p><strong>4. Wie lautet die Formel für den Wirkungsgrad?</strong></p>
-    <div class="antworten">
-        <label><input type="radio" name="q4" value="A"> A) η = P_auf / P_nutz</label><br><label><input type="radio" name="q4" value="B"> B) η = (P_nutz / P_auf) · 100</label><br><label><input type="radio" name="q4" value="C"> C) η = U · I</label><br><label><input type="radio" name="q4" value="D"> D) η = E / t</label><br>
-    </div>
-</div>
-<div class="frage">
-    <p><strong>5. Was ist die SI-Einheit der elektrischen Arbeit?</strong></p>
-    <div class="antworten">
-        <label><input type="radio" name="q5" value="A"> A) Newton</label><br><label><input type="radio" name="q5" value="B"> B) Joule</label><br><label><input type="radio" name="q5" value="C"> C) Watt</label><br><label><input type="radio" name="q5" value="D"> D) Volt</label><br>
-    </div>
-</div>
-<div class="frage">
-    <p><strong>6. Ein Strom fließt 5 Sekunden lang bei 3 A. Wie viele Elektronen wurden bewegt?</strong></p>
-    <div class="antworten">
-        <label><input type="radio" name="q6" value="A"> A) ca. 9,4·10¹⁹</label><br><label><input type="radio" name="q6" value="B"> B) ca. 3·10⁻⁶</label><br><label><input type="radio" name="q6" value="C"> C) ca. 9,4·10¹⁸</label><br><label><input type="radio" name="q6" value="D"> D) ca. 1,5</label><br>
-    </div>
-</div>
-<div class="frage">
-    <p><strong>7. Ein Gerät setzt 150 J in 5 s um. Wie groß ist seine Leistung?</strong></p>
-    <div class="antworten">
-        <label><input type="radio" name="q7" value="A"> A) 15 W</label><br><label><input type="radio" name="q7" value="B"> B) 30 W</label><br><label><input type="radio" name="q7" value="C"> C) 25 W</label><br><label><input type="radio" name="q7" value="D"> D) 50 W</label><br>
-    </div>
-</div>
-<div class="frage">
-    <p><strong>8. Welche Formel passt zu Energieverbrauch?</strong></p>
-    <div class="antworten">
-        <label><input type="radio" name="q8" value="A"> A) E = P · t</label><br><label><input type="radio" name="q8" value="B"> B) E = U / I</label><br><label><input type="radio" name="q8" value="C"> C) E = R · t</label><br><label><input type="radio" name="q8" value="D"> D) E = Q / t</label><br>
-    </div>
-</div>
-<div class="frage">
-    <p><strong>9. Was bedeutet 'P' in der Formel P = U · I?</strong></p>
-    <div class="antworten">
-        <label><input type="radio" name="q9" value="A"> A) Potenzial</label><br><label><input type="radio" name="q9" value="B"> B) Stromstärke</label><br><label><input type="radio" name="q9" value="C"> C) Leistung</label><br><label><input type="radio" name="q9" value="D"> D) Arbeit</label><br>
-    </div>
-</div>
-<div class="frage">
-    <p><strong>10. Welche der folgenden Einheiten ist keine SI-Einheit?</strong></p>
-    <div class="antworten">
-        <label><input type="radio" name="q10" value="A"> A) Ohm</label><br><label><input type="radio" name="q10" value="B"> B) Volt</label><br><label><input type="radio" name="q10" value="C"> C) Ampere</label><br><label><input type="radio" name="q10" value="D"> D) Kalorie</label><br>
-    </div>
-</div>
-<button type="button" onclick="auswerten()">Auswerten</button>
-</form>
-<p id="ergebnis"></p>
+<label><input type="radio" name="q1" value="A" onchange="pruefeAntwort(1, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> A) Stromstärke</label><br><label><input type="radio" name="q1" value="B" onchange="pruefeAntwort(1, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> B) Wärmeleistung</label><br><label><input type="radio" name="q1" value="C" onchange="pruefeAntwort(1, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> C) Nutzleistung zu Gesamtleistung</label><br><label><input type="radio" name="q1" value="D" onchange="pruefeAntwort(1, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> D) Spannung zu Strom</label><br></div>
+    <p class="feedback" id="feedback1"></p>
+  </div>
 
+  <div class="frage" id="frage2">
+    <p><strong>2. Was beschreibt der Wirkungsgrad?</strong></p>
+    <div class="antworten">
+<label><input type="radio" name="q2" value="A" onchange="pruefeAntwort(2, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> A) Stromstärke</label><br><label><input type="radio" name="q2" value="B" onchange="pruefeAntwort(2, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> B) Wärmeleistung</label><br><label><input type="radio" name="q2" value="C" onchange="pruefeAntwort(2, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> C) Nutzleistung zu Gesamtleistung</label><br><label><input type="radio" name="q2" value="D" onchange="pruefeAntwort(2, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> D) Spannung zu Strom</label><br></div>
+    <p class="feedback" id="feedback2"></p>
+  </div>
+
+  <div class="frage" id="frage3">
+    <p><strong>3. Was beschreibt der Wirkungsgrad?</strong></p>
+    <div class="antworten">
+<label><input type="radio" name="q3" value="A" onchange="pruefeAntwort(3, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> A) Stromstärke</label><br><label><input type="radio" name="q3" value="B" onchange="pruefeAntwort(3, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> B) Wärmeleistung</label><br><label><input type="radio" name="q3" value="C" onchange="pruefeAntwort(3, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> C) Nutzleistung zu Gesamtleistung</label><br><label><input type="radio" name="q3" value="D" onchange="pruefeAntwort(3, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> D) Spannung zu Strom</label><br></div>
+    <p class="feedback" id="feedback3"></p>
+  </div>
+
+  <div class="frage" id="frage4">
+    <p><strong>4. Was beschreibt der Wirkungsgrad?</strong></p>
+    <div class="antworten">
+<label><input type="radio" name="q4" value="A" onchange="pruefeAntwort(4, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> A) Stromstärke</label><br><label><input type="radio" name="q4" value="B" onchange="pruefeAntwort(4, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> B) Wärmeleistung</label><br><label><input type="radio" name="q4" value="C" onchange="pruefeAntwort(4, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> C) Nutzleistung zu Gesamtleistung</label><br><label><input type="radio" name="q4" value="D" onchange="pruefeAntwort(4, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> D) Spannung zu Strom</label><br></div>
+    <p class="feedback" id="feedback4"></p>
+  </div>
+
+  <div class="frage" id="frage5">
+    <p><strong>5. Was beschreibt der Wirkungsgrad?</strong></p>
+    <div class="antworten">
+<label><input type="radio" name="q5" value="A" onchange="pruefeAntwort(5, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> A) Stromstärke</label><br><label><input type="radio" name="q5" value="B" onchange="pruefeAntwort(5, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> B) Wärmeleistung</label><br><label><input type="radio" name="q5" value="C" onchange="pruefeAntwort(5, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> C) Nutzleistung zu Gesamtleistung</label><br><label><input type="radio" name="q5" value="D" onchange="pruefeAntwort(5, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> D) Spannung zu Strom</label><br></div>
+    <p class="feedback" id="feedback5"></p>
+  </div>
+
+  <div class="frage" id="frage6">
+    <p><strong>6. Was beschreibt der Wirkungsgrad?</strong></p>
+    <div class="antworten">
+<label><input type="radio" name="q6" value="A" onchange="pruefeAntwort(6, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> A) Stromstärke</label><br><label><input type="radio" name="q6" value="B" onchange="pruefeAntwort(6, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> B) Wärmeleistung</label><br><label><input type="radio" name="q6" value="C" onchange="pruefeAntwort(6, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> C) Nutzleistung zu Gesamtleistung</label><br><label><input type="radio" name="q6" value="D" onchange="pruefeAntwort(6, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> D) Spannung zu Strom</label><br></div>
+    <p class="feedback" id="feedback6"></p>
+  </div>
+
+  <div class="frage" id="frage7">
+    <p><strong>7. Was beschreibt der Wirkungsgrad?</strong></p>
+    <div class="antworten">
+<label><input type="radio" name="q7" value="A" onchange="pruefeAntwort(7, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> A) Stromstärke</label><br><label><input type="radio" name="q7" value="B" onchange="pruefeAntwort(7, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> B) Wärmeleistung</label><br><label><input type="radio" name="q7" value="C" onchange="pruefeAntwort(7, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> C) Nutzleistung zu Gesamtleistung</label><br><label><input type="radio" name="q7" value="D" onchange="pruefeAntwort(7, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> D) Spannung zu Strom</label><br></div>
+    <p class="feedback" id="feedback7"></p>
+  </div>
+
+  <div class="frage" id="frage8">
+    <p><strong>8. Was beschreibt der Wirkungsgrad?</strong></p>
+    <div class="antworten">
+<label><input type="radio" name="q8" value="A" onchange="pruefeAntwort(8, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> A) Stromstärke</label><br><label><input type="radio" name="q8" value="B" onchange="pruefeAntwort(8, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> B) Wärmeleistung</label><br><label><input type="radio" name="q8" value="C" onchange="pruefeAntwort(8, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> C) Nutzleistung zu Gesamtleistung</label><br><label><input type="radio" name="q8" value="D" onchange="pruefeAntwort(8, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> D) Spannung zu Strom</label><br></div>
+    <p class="feedback" id="feedback8"></p>
+  </div>
+
+  <div class="frage" id="frage9">
+    <p><strong>9. Was beschreibt der Wirkungsgrad?</strong></p>
+    <div class="antworten">
+<label><input type="radio" name="q9" value="A" onchange="pruefeAntwort(9, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> A) Stromstärke</label><br><label><input type="radio" name="q9" value="B" onchange="pruefeAntwort(9, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> B) Wärmeleistung</label><br><label><input type="radio" name="q9" value="C" onchange="pruefeAntwort(9, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> C) Nutzleistung zu Gesamtleistung</label><br><label><input type="radio" name="q9" value="D" onchange="pruefeAntwort(9, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> D) Spannung zu Strom</label><br></div>
+    <p class="feedback" id="feedback9"></p>
+  </div>
+
+  <div class="frage" id="frage10">
+    <p><strong>10. Was beschreibt der Wirkungsgrad?</strong></p>
+    <div class="antworten">
+<label><input type="radio" name="q10" value="A" onchange="pruefeAntwort(10, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> A) Stromstärke</label><br><label><input type="radio" name="q10" value="B" onchange="pruefeAntwort(10, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> B) Wärmeleistung</label><br><label><input type="radio" name="q10" value="C" onchange="pruefeAntwort(10, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> C) Nutzleistung zu Gesamtleistung</label><br><label><input type="radio" name="q10" value="D" onchange="pruefeAntwort(10, 'C', `Wirkungsgrad = (Nutzleistung / Gesamtleistung) × 100.`, `Carnot fragt: Was bringt dir ein Motor, wenn du weißt, wie viel davon genutzt wird?`)"> D) Spannung zu Strom</label><br></div>
+    <p class="feedback" id="feedback10"></p>
+  </div>
+
+</div>
+<button onclick="zeigeErgebnis()">Quiz abschließen</button>
+<p id="ergebnis"></p>
 <script>
-function auswerten() {
-    const loesungen = ["C","C","D","B","B","A","C","A","C","D"];
-    let punkte = 0;
-    for (let i = 1; i <= loesungen.length; i++) {
-        let antwort = document.querySelector('input[name="q'+i+'"]:checked');
-        if (antwort && antwort.value === loesungen[i-1]) punkte++;
+let richtigeAntworten = new Set();
+function pruefeAntwort(nr, loesung, merksatz, tipp) {
+    const antwort = document.querySelector('input[name="q'+nr+'"]:checked');
+    const feedback = document.getElementById("feedback" + nr);
+    if (!antwort) return;
+    if (antwort.value === loesung) {
+        feedback.textContent = "Richtig! " + merksatz;
+        feedback.className = "feedback richtig";
+        richtigeAntworten.add(nr);
+    } else {
+        feedback.textContent = "Leider falsch. " + tipp;
+        feedback.className = "feedback falsch";
+        richtigeAntworten.delete(nr);
     }
-    document.getElementById('ergebnis').innerText = `Du hast ${punkte} von ${loesungen.length} Punkten erreicht.`;
+}
+function zeigeErgebnis() {
+    const total = document.querySelectorAll('.frage').length;
+    const korrekt = richtigeAntworten.size;
+    const ergebnis = document.getElementById("ergebnis");
+    if (korrekt === total) {
+        ergebnis.textContent = "Super! Du hast alle Fragen richtig beantwortet.";
+    } else {
+        ergebnis.textContent = "Noch " + (total - korrekt) + " Frage(n) offen oder falsch. Versuche es nochmal!";
+    }
 }
 </script>
 </body>
